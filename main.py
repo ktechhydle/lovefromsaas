@@ -2,12 +2,9 @@ import streamlit as st
 import datetime
 from pytz import timezone
 
-slider = st.slider("Current day", 1, 31)
-
 trip_start = datetime.datetime(2026, 10, 2);
 trip_end = datetime.datetime(2026, 10, 27);
 current = datetime.datetime.now();
-current = datetime.datetime(2026, 10, slider.real);
 messages = open("assets/quotes.txt").read().splitlines()
 
 if current < trip_start:
