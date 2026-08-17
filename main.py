@@ -6,12 +6,14 @@ trip_start = datetime.datetime(2026, 10, 2);
 trip_end = datetime.datetime(2026, 10, 27);
 current = datetime.datetime.now();
 messages = open("assets/quotes.txt").read().splitlines()
+facts = open("assets/facts.txt").read().splitlines()
 
 if current < trip_start:
     st.header(f"Days until Saas-Fee: {(trip_start - current).days}")
     exit(0)
 
 st.header(f"♥️ From Saas-Fee - October {current.day}")
+st.write(f"**Did you know?** *{facts[current.day - 1]}*")
 st.divider()
 
 left1, right1 = st.columns(2, border=True);
